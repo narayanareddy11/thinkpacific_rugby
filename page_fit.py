@@ -64,7 +64,7 @@ def page_fit():
 
     col1, col2 = st.columns([1,1])
     col1.subheader('Player info ')
-    image = Image.open('images\\'+ option+'.PNG')
+    image = Image.open('images\\'+ option+'.png')
     col1.image(image, caption=None)
 
 
