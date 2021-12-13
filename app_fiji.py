@@ -5,8 +5,8 @@ Created on 10 Nov 2021
 # Streamlit
 import streamlit as st
 # Add pages -- see those files for deatils within
-from page_fit import page_fit
-from page_fiji_players import page_fiji_players
+from fiji_rugby import fiji_rugby1
+from rugby import rugby1
 from PIL import Image
 # Use random seed
 import numpy as np
@@ -35,8 +35,8 @@ def main():
     """
 
     pages = {
-        "Rugby_Team": page_fiji_players,
-        "fiji_players": page_fit,
+        "Rugby": rugby1,
+        "fiji_Rugby": fiji_rugby1,
     }
 
     #st.sidebar.title("Main options")

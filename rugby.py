@@ -10,6 +10,8 @@ import streamlit as st  # pip install streamlit
 import matplotlib.pyplot as plt
 import plotly.figure_factory as ff
 import numpy as np
+
+
 @st.cache
 def get_data_from_excel():
     df = pd.read_excel(
@@ -68,11 +70,12 @@ def pie_chart2():
     
 
 
-def page_fiji_players():
+def rugby1():
     main(get_data_from_excel)
 
 # Players data
 def main(get_data_from_excel):
+  
     df = get_data_from_excel()
     Country = st.sidebar.multiselect(
     "Select the Country:",
@@ -100,10 +103,10 @@ def main(get_data_from_excel):
         st.subheader("RPI Scores:")
         st.subheader(f"{total_sales:,}")
     with middle_column:
-        st.subheader("Average Rating:")
+        st.subheader("Avg Rating:")
         st.subheader(f"{average_rating} {star_rating}")
     with right_column:
-        st.subheader("Average Rugby:")
+        st.subheader("Avg Rugby:")
         st.subheader(f"{average_sale_by_transaction}")
 
     st.markdown("""---""")
@@ -128,7 +131,7 @@ def main(get_data_from_excel):
         st.markdown(str_goals)
     with row2_4:
         total_shots_in_df = df_selection.Forward_Back.value_counts()
-        str_shots = "👟⚽  Forward : " + str(total_shots_in_df[0]) + "   Back: "+str(total_shots_in_df[1] ) #+ " - Forward_Back"
+        str_shots = "👟⚽  For: " + str(total_shots_in_df[0]) + " Back: "+str(total_shots_in_df[1] ) #+ " - Forward_Back"
         st.markdown(str_shots)
 
     row3_spacer1, row3_1, row3_spacer2 = st.columns((.2, 7.1, .2))
@@ -142,7 +145,7 @@ def main(get_data_from_excel):
 #----------------------------------------------------------------------
 
 
-    st.markdown(":two_men_holding_hands: Fiji Rugby \t\t Team")
+    st.markdown(":two_men_holding_hands: Rugby 6 Nations Predictor Rugby")
     
     df2=get_data_from_excel1("Kaggle Six Nations.xlsx", "Cumulativ Awards, Participation", "A:N", 8)
     
@@ -199,12 +202,12 @@ def main(get_data_from_excel):
     df3 = get_data_from_excel1("Kaggle Six Nations.xlsx", "2019 Team Stats", "A:N", 7)
    # print(df3)
 
-    st.markdown(":two_men_holding_hands: Fiji Rugby \t\t Team")
+    st.markdown(":two_men_holding_hands: 2019 Team Rugby Stats \t\t Team")
 
     #if all_teams_selected == 'Include all available teams':
-    row16_spacer1, row16_1, row16_2, row16_3, row16_4, row16_5, row16_6, row16_7,row16_8,row16_9,row16_spacer2  = st.columns((0.5, 1, 1.2, 1.2, 1.2,1.2, 1.2,1.2,1.2,1.2,0.5))
+    row16_spacer1, row16_1, row16_2, row16_3, row16_4, row16_5, row16_6, row16_7,row16_8,row16_9,row16_spacer2  = st.columns((0.5, 1.2, 1.2, 1, 1.2,1.2, 1.2,1.2,1.2,1.2,0.5))
     with row16_1:
-        st.markdown('**Country **')
+        st.markdown('🤹‍♂️**Country **')
         st.markdown(str(df3.iloc[0]['Country']))
         st.markdown(str(df3.iloc[1]['Country']))
         st.markdown(str(df3.iloc[2]['Country']))
@@ -220,7 +223,7 @@ def main(get_data_from_excel):
         # st.markdown("🚫 Offside")
         # st.markdown("📐 Corners")
     with row16_2:
-        st.markdown('**Points **')
+        st.markdown('🏉**Points**')
         st.markdown(str(df3.iloc[0]['Points']))
         st.markdown(str(df3.iloc[1]['Points']))
         st.markdown(str(df3.iloc[2]['Points']))
@@ -228,7 +231,7 @@ def main(get_data_from_excel):
         st.markdown(str(df3.iloc[4]['Points']))
         st.markdown(str(df3.iloc[5]['Points']))
     with row16_3:
-        st.markdown('**Tries **')
+        st.markdown('🏆**Tries**')
         st.markdown(str(df3.iloc[0]['Tries']))
         st.markdown(str(df3.iloc[1]['Tries']))
         st.markdown(str(df3.iloc[2]['Tries']))
@@ -237,7 +240,7 @@ def main(get_data_from_excel):
         st.markdown(str(df3.iloc[5]['Tries']))
    
     with row16_4:
-        st.markdown('**Conversions **')
+        st.markdown('🔁**Conv**')
         st.markdown(str(df3.iloc[0]['Conversions']))
         st.markdown(str(df3.iloc[1]['Conversions']))
         st.markdown(str(df3.iloc[2]['Conversions']))
@@ -246,7 +249,7 @@ def main(get_data_from_excel):
         st.markdown(str(df3.iloc[5]['Conversions']))
              
     with row16_5:
-        st.markdown('**Penalty-GL **')
+        st.markdown('🤕**PenaltY**')
         st.markdown(str(df3.iloc[0]['Penalty Goals']))
         st.markdown(str(df3.iloc[1]['Penalty Goals']))
         st.markdown(str(df3.iloc[2]['Penalty Goals']))
@@ -255,7 +258,7 @@ def main(get_data_from_excel):
         st.markdown(str(df3.iloc[5]['Penalty Goals']))
         
     with row16_6:
-        st.markdown('**Drop-GL **')
+        st.markdown('🏃‍♂️**Drop**')
         st.markdown(str(df3.iloc[0]['Drop Goals']))
         st.markdown(str(df3.iloc[1]['Drop Goals']))
         st.markdown(str(df3.iloc[2]['Drop Goals']))
@@ -264,7 +267,7 @@ def main(get_data_from_excel):
         st.markdown(str(df3.iloc[5]['Drop Goals']))
         
     with row16_7:
-        st.markdown('**Metres-GN **')
+        st.markdown('📐**Metres**')
         st.markdown(str(df3.iloc[0]['Metres Gained']))
         st.markdown(str(df3.iloc[1]['Metres Gained']))
         st.markdown(str(df3.iloc[2]['Metres Gained']))
@@ -273,7 +276,7 @@ def main(get_data_from_excel):
         st.markdown(str(df3.iloc[5]['Metres Gained']))
 
     with row16_8:
-        st.markdown('**Carries **')
+        st.markdown('🚫**Carries**')
         st.markdown(str(df3.iloc[0]['Carries']))
         st.markdown(str(df3.iloc[1]['Carries']))
         st.markdown(str(df3.iloc[2]['Carries']))
@@ -281,7 +284,7 @@ def main(get_data_from_excel):
         st.markdown(str(df3.iloc[4]['Carries']))
         st.markdown(str(df3.iloc[5]['Carries']))
     with row16_9:
-        st.markdown('**Def-Beaten**')
+        st.markdown('🏅**Beaten**')
         st.markdown(str(df3.iloc[0]['Defenders Beaten']))
         st.markdown(str(df3.iloc[1]['Defenders Beaten']))
         st.markdown(str(df3.iloc[2]['Defenders Beaten']))
@@ -335,10 +338,12 @@ def main(get_data_from_excel):
     right_column.plotly_chart(fig_product_sales, use_container_width=True)
     
     #-----------------------------
-    
+
     
     st.markdown("""---""")
-    st.markdown(":two_men_holding_hands: Fiji Rugby \t\t Team")
+    st.markdown(":two_men_holding_hands: Distplot with Rugby Parameters 🏉 ")
+    
+
 
     # Add histogram data
     x1 =  (df_selection.iloc[:, 21].tolist())
@@ -355,6 +360,8 @@ def main(get_data_from_excel):
             hist_data, group_labels, bin_size=[.1, .25, .5])
     # Plot!
     st.plotly_chart(fig, use_container_width=True)
+
+
     
     
     

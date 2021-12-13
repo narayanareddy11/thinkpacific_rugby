@@ -54,7 +54,7 @@ def get_data_from_excel(File, sheet_name):
     #df["hour"] = pd.to_datetime(df["Time"], format="%H:%M:%S").dt.hour
     return df
 
-def page_fit():
+def fiji_rugby1():
 
 
 
@@ -432,37 +432,22 @@ def page_fit():
             
     
     
-
-
-   # import streamlit as st
-   # import matplotlib.pyplot as plt
-
-    # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-    labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
-    sizes = [15, 30, 45, 10]
+    
+    
+    
+    data_Position = dict(df_player_info['Position'].value_counts())#df_player_info.Position.value_counts().to_frame()
+    
+   # for i in data_Position:
+    #    print(i, "ooooo")
+    print(data_Position.keys, "tttttttttttttttttttttttt", data_Position.values())
+    
+    labels = data_Position.keys()
+    sizes = data_Position.values()
     explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
     fig1, ax1 = plt.subplots()
-    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+    ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
             shadow=True, startangle=90)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
     st.pyplot(fig1)
-    
-    
-
-    #import streamlit as st
-
-
-    # source = data.seattle_weather()
-
-    # c = alt.Chart(source).mark_bar(
-    #     cornerRadiusTopLeft=3,
-    #     cornerRadiusTopRight=3
-    # ).encode(
-    #     x='month(date):O',
-    #     y='count():Q',
-    #     color='weather:N'
-    # )
-
-    # st.write(c)
