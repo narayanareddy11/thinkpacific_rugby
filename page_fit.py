@@ -11,11 +11,26 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import cmasher as cmr
 import numpy as np
+#from scipy import stats
+import scipy.stats
+import math
 from bokeh.plotting import figure
+from bokeh.models import Legend
+import time
+import base64
+import collections
+
 import matplotlib.pyplot as plt
+
 import streamlit as st
+# Add pages -- see those files for deatils within
+#from page_fit import page_fit
+#from page_fiji_players import page_fiji_players
 from PIL import Image
 # Use random seed
+import numpy as np
+
+import streamlit as st
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -64,7 +79,7 @@ def page_fit():
 
     col1, col2 = st.columns([1,1])
     col1.subheader('Player info ')
-    image = Image.open('images/'+ option+'.png')
+    image = Image.open('images\\'+ option+'.PNG')
     col1.image(image, caption=None)
 
 
