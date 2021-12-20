@@ -145,7 +145,7 @@ def main(get_data_from_excel):
 #----------------------------------------------------------------------
 
 
-    st.markdown(":two_men_holding_hands: Rugby 6 Nations Predictor Rugby")
+    st.markdown(":two_men_holding_hands: Rugby 6 Nations analysis")
     
     df2=get_data_from_excel1("Kaggle Six Nations.xlsx", "Cumulativ Awards, Participation", "A:N", 8)
     
@@ -164,7 +164,7 @@ def main(get_data_from_excel):
     ax1.pie(sizes, explode=None, labels=labels, autopct='%1.1f%%',
             shadow=True, startangle=90)
     
-    plt.title('Registered Players by  Country \n\n \n \n', fontsize=14, pad=20)
+    plt.title('Registered Players by  Country', fontsize=14, pad=20)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 

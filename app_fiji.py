@@ -18,7 +18,7 @@ st.set_page_config(page_title="Fiji Rugby", page_icon=":palm_tree:", layout="wid
 
 logo, name = st.sidebar.columns(2)
 with logo:
-    image = Image.open('dd.PNG')
+    image = Image.open('fiji_logo.PNG')
     st.image(image, caption=None)
 
 with name:
@@ -67,4 +67,4 @@ if __name__ == "__main__":
                 header {visibility: hidden;}
                 </style>
                 """
-  #  st.markdown(hide_st_style, unsafe_allow_html=True)
+    st.markdown(hide_st_style, unsafe_allow_html=True)
